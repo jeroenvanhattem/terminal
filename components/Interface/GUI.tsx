@@ -44,14 +44,14 @@ const GUI = (props: any) => {
         bgColor={Theme()._900}
         flexDir='column'
       >
-        <Flex m={2} align='center'>
+        <Flex p={2} h={10} align='center'>
           <Flex w={28} flexDir='row'>
             <Flex>
               <MacButtons onGreen={makeBigger} onOrange={makeSmaller} />
             </Flex>
           </Flex>
           <Flex flexGrow={1} justify='center'>
-            <Text fontSize={18} fontWeight={500}>{name}</Text>
+            <Text fontSize={16} fontWeight={500}>{name}</Text>
           </Flex>
           <Flex w={28} mr={4} justify='flex-end'>
             <Code size={18} />

@@ -41,7 +41,7 @@ const Terminal = (props: any) => {
         bgColor={Theme()._900}
         flexDir='column'
       >
-        <Flex m={2}>
+        <Flex p={2} h={10}>
           <MacButtons onGreen={makeBigger} onOrange={makeSmaller} />
         </Flex>
         {children}

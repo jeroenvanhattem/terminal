@@ -44,7 +44,7 @@ const File = (props: any) => {
             <MacButtons onRed={() => setActive('')} onGreen={makeBigger} onOrange={makeSmaller} />
           </Flex>
           <Flex flexGrow={1} justify='center'>
-            <Text>{name}</Text>
+            <Text fontSize={16}>{name}</Text>
           </Flex>
           <Flex w={24}>
           </Flex>
