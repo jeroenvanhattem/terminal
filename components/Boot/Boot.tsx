@@ -8,7 +8,7 @@ import Theme from "../Theme"
 import Typist from 'react-typist'
 import MacButtons from "../Header/MacButtons"
 import { useEffect, useRef, useState } from "react"
-import Terminal from "../Terminal/Terminal"
+import Terminal from "../Interface/Terminal"
 
 const Boot = (props: any) => {
   const { setBooted } = props

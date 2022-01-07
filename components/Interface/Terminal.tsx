@@ -11,6 +11,16 @@ import { useEffect, useRef, useState } from "react"
 
 const Terminal = (props: any) => {
   const { children, setBooted } = props
+  const [size, setSize] = useState({ width: '800px', height: '500px' })
+
+  const makeBigger = () => {
+    setSize({ width: '80%', height: '80%' })
+  }
+
+  const makeSmaller = () => {
+    setSize({ width: '800px', height: '500px' })
+  }
+
   return (
     <Flex
       w='100vw'
@@ -23,8 +33,8 @@ const Terminal = (props: any) => {
     >
       <Flex pos='absolute' top={4} right={4} cursor='pointer' onClick={() => setBooted(true)}>Click here to skip the booting sequence</Flex>
       <Flex
-        w='800px'
-        h='500px'
+        w={size.width}
+        h={size.height}
         border='1px solid'
         borderColor={Theme()._700}
         borderRadius={15}
@@ -32,7 +42,7 @@ const Terminal = (props: any) => {
         flexDir='column'
       >
         <Flex m={2}>
-          <MacButtons />
+          <MacButtons onGreen={makeBigger} onOrange={makeSmaller} />
         </Flex>
         {children}
       </Flex >
