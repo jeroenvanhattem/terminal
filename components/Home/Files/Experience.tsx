@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import {
   Flex,
-  Text
+  Wrap,
+  Text,
 } from "@chakra-ui/layout"
 import Icon from "../Desktop/Icon"
 import Folder from "../../Interface/Folder"
 import Dashy from "../Experience/Dashy"
+import Foodsy from "../Experience/Foodsy"
 
 const Experience = (props: any) => {
   const { setActive } = props
@@ -22,11 +24,17 @@ const Experience = (props: any) => {
       pos='absolute'
     >
       <Folder name='experience' setActive={setActive}>
-        <Icon setActive={setExperience} name='dashy.tsx'>
-          <Text onClick={() => setExperience('dashy')}>Dashy</Text>
-        </Icon>
+        <Wrap>
+          <Icon setActive={setExperience} name='dashy.tsx'>
+            <Text onClick={() => setExperience('dashy')}>Dashy</Text>
+          </Icon>
+          <Icon setActive={setExperience} name='foodsy.tsx'>
+            <Text onClick={() => setExperience('foodsy')}>Foodsy</Text>
+          </Icon>
+        </Wrap>
       </Folder>
       {experience === 'dashy.tsx' && <Dashy setExperience={setExperience} />}
+      {experience === 'foodsy.tsx' && <Foodsy setExperience={setExperience} />}
     </Flex>
   )
 }
