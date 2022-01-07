@@ -3,6 +3,7 @@ import {
   Heading,
   Text
 } from "@chakra-ui/layout"
+// @ts-ignore
 import getAge from 'get-age'
 import File from "../../Interface/File"
 
