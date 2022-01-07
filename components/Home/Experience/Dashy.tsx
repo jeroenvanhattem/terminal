@@ -28,12 +28,12 @@ const Dashy = (props: any) => {
           w='100%'
           h='100%'
           justify='center'
+          overflowY='scroll'
         >
           <Flex
             my={2}
             flexDir='column'
             align='center'
-            overflowY='scroll'
             maxW={{ base: '90%', lg: 'unset' }}
           >
             <Image my={2} src='/static/images/logo_full_dark.png' alt='dashy logo' w={36} />
