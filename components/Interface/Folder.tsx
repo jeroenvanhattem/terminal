@@ -17,7 +17,7 @@ const File = (props: any) => {
     if (setParentOffset) {
       setParentOffset(false)
     }
-    setSize({ width: '99%', height: '95%' })
+    setSize({ width: '99%', height: '99%' })
   }
 
   const makeSmaller = () => {
@@ -39,7 +39,7 @@ const File = (props: any) => {
       <Flex
         w={{ base: '100%', lg: size.width }}
         h={{ base: '100%', lg: size.height }}
-        minW={{ base: '100%', lg: '700px' }}
+        minW={{ base: '100%', lg: '800px' }}
         minH={{ base: '100%', lg: '600px' }}
         border='1px solid'
         borderColor={Theme()._700}

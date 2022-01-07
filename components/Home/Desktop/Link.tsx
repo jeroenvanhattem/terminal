@@ -3,10 +3,27 @@ import {
   Heading,
   Text
 } from "@chakra-ui/layout"
+import {
+  GitHub,
+  Linkedin,
+  Instagram,
+} from 'react-feather'
 import Theme from "../../Theme"
 
-const Icon = (props: any) => {
+const Link = (props: any) => {
   const { name, setActive } = props
+
+  const getIcon = () => {
+    switch (name) {
+      case 'github':
+        return <GitHub size={48} />
+      case 'linkedin':
+        return <Linkedin size={48} />
+      case 'instagram':
+        return <Instagram size={48} />
+    }
+  }
+
   return (
     <Flex
       w={48}
@@ -20,13 +37,13 @@ const Icon = (props: any) => {
         w={'80%'}
         h={'80%'}
         bgColor={Theme()._900}
+        borderRadius={15}
         border='1px solid'
         borderColor={Theme()._700}
-        borderRadius={15}
         align='center'
         justify='center'
       >
-        <Heading>.{name.split('.')[1].toUpperCase()}</Heading>
+        <Heading>{getIcon()}</Heading>
       </Flex>
       <Flex flexGrow={1} />
       <Flex ml={2} align='center' justify='center'>
@@ -37,4 +54,4 @@ const Icon = (props: any) => {
   )
 }
 
-export default Icon
+export default Link

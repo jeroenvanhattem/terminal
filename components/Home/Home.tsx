@@ -4,6 +4,7 @@ import GUI from "../Interface/GUI"
 import Theme from "../Theme"
 import Desktop from "./Desktop/Desktop"
 import Welcome from "./Files/Welcome"
+import Experience from "./Files/Experience"
 
 const Home = () => {
   const [active, setActive] = useState('')
@@ -16,6 +17,7 @@ const Home = () => {
     <GUI name={active}>
       <Desktop setActive={setActive} />
       {active === 'welcome.tsx' && <Welcome setActive={setActive} />}
+      {active === 'experience' && <Experience setActive={setActive} />}
     </GUI>
   )
 }

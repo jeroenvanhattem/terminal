@@ -15,14 +15,14 @@ import MacButtons from "../Header/MacButtons"
 
 const GUI = (props: any) => {
   const { children, name } = props
-  const [size, setSize] = useState({ width: '1200px', height: '800px' })
+  const [size, setSize] = useState({ width: '60%', height: '70%' })
 
   const makeBigger = () => {
-    setSize({ width: '80%', height: '80%' })
+    setSize({ width: '100%', height: '100%' })
   }
 
   const makeSmaller = () => {
-    setSize({ width: '1200px', height: '800px' })
+    setSize({ width: '80%', height: '80%' })
   }
 
   return (
@@ -33,15 +33,19 @@ const GUI = (props: any) => {
       maxH='100vh'
       justify='center'
       align='center'
+      pos='relative'
       fontFamily={'Open Sans'}
     >
       <Flex
-        w={size.width}
-        h={size.height}
+        w={{ base: '100%', lg: size.width }}
+        h={{ base: '100%', lg: size.height }}
+        minW={{ base: '100%', lg: '1200px' }}
+        minH={{ base: '100%', lg: '800px' }}
         border='1px solid'
         borderColor={Theme()._700}
         borderRadius={15}
         bgColor={Theme()._900}
+        pos='relative'
         flexDir='column'
       >
         <Flex p={2} h={10} align='center'>
