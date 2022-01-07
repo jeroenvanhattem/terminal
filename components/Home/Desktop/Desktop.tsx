@@ -22,6 +22,7 @@ const Desktop = (props: any) => {
         <Wrap>
           <Icon name='welcome.tsx' setActive={setActive} />
           <Icon name='about.tsx' setActive={setActive} />
+          <Icon name='music.tsx' setActive={setActive} />
           <FolderIcon name='experience' setActive={setActive} />
         </Wrap>
       </Flex>
@@ -30,9 +31,9 @@ const Desktop = (props: any) => {
       
       <Flex>
         <Wrap>
-          <Link name='github' setActive={setActive} />
-          <Link name='linkedin' setActive={setActive} />
-          <Link name='instagram' setActive={setActive} />
+          <Link name='github' url='https://github.com/jeroenvanhattem' setActive={setActive} />
+          <Link name='linkedin' url='https://www.linkedin.com/in/jeroenvhattem/' setActive={setActive} />
+          <Link name='instagram' url='https://instagram.com/jeroenvhattem' setActive={setActive} />
         </Wrap>
       </Flex>
     </Flex >

@@ -11,7 +11,7 @@ import {
 import Theme from "../../Theme"
 
 const Link = (props: any) => {
-  const { name, setActive } = props
+  const { name, setActive, url } = props
 
   const getIcon = () => {
     switch (name) {
@@ -25,32 +25,33 @@ const Link = (props: any) => {
   }
 
   return (
-    <Flex
-      w={48}
-      h={56}
-      align='center'
-      flexDir='column'
-      onClick={() => setActive(name)}
-      cursor='pointer'
-    >
+    <a href={url} target='_blank' rel="noreferrer" >
       <Flex
-        w={'80%'}
-        h={'80%'}
-        bgColor={Theme()._900}
-        borderRadius={15}
-        border='1px solid'
-        borderColor={Theme()._700}
+        w={48}
+        h={56}
         align='center'
-        justify='center'
+        flexDir='column'
+        onClick={() => setActive(name)}
+        cursor='pointer'
       >
-        <Heading>{getIcon()}</Heading>
+        <Flex
+          w={'80%'}
+          h={'80%'}
+          bgColor={Theme()._900}
+          borderRadius={15}
+          border='1px solid'
+          borderColor={Theme()._700}
+          align='center'
+          justify='center'
+        >
+          <Heading>{getIcon()}</Heading>
+        </Flex>
+        <Flex flexGrow={1} />
+        <Flex ml={2} align='center' justify='center'>
+          <Text>{name}</Text>
+        </Flex>
       </Flex>
-      <Flex flexGrow={1} />
-      <Flex ml={2} align='center' justify='center'>
-        <Text>{name}</Text>
-      </Flex>
-    </Flex>
-
+    </a>
   )
 }
 

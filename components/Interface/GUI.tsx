@@ -55,7 +55,7 @@ const GUI = (props: any) => {
             </Flex>
           </Flex>
           <Flex flexGrow={1} justify='center'>
-            <Text fontSize={16} fontWeight={500}>{name}</Text>
+            <Text fontSize={16} fontWeight={500}>Dashy OS</Text>
           </Flex>
           <Flex w={28} mr={4} justify='flex-end'>
             <Code size={18} />
