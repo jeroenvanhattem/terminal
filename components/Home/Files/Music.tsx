@@ -1,5 +1,6 @@
 import { Flex, Heading, Text } from "@chakra-ui/layout"
 import File from "../../Interface/File"
+import LinkButton from "../../Shared/LinkButton"
 
 const Music = (props: any) => {
   const { setActive } = props
@@ -42,6 +43,7 @@ const Music = (props: any) => {
                 After years of practicing, I finally released a song called &#39;Intro&#39;. There was a lot of progress, but I still got really far to go.
                 I hope to release a bit more this year. Let&#39;s see what this year has in store for us.
               </Text>
+              <LinkButton url='https://open.spotify.com/artist/7Egoy0UuRKksBWzmGYzd68?si=kNp4qdDtSya1nmkr-vy92Q'>YENO on Spotify</LinkButton>
             </Flex>
             <Flex
               w={{ base: '90%', lg: '50%' }}
