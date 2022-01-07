@@ -3,10 +3,9 @@ import {
   Input,
   Text
 } from "@chakra-ui/react"
-import Header from "../Header/Header"
 import Theme from "../Theme"
 import Typist from 'react-typist'
-import MacButtons from "../Header/MacButtons"
+import MacButtons from "../Shared/MacButtons"
 import { useEffect, useRef, useState } from "react"
 
 const File = (props: any) => {

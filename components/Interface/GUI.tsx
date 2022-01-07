@@ -8,10 +8,9 @@ import {
 import {
   Code
 } from 'react-feather'
-import Header from "../Header/Header"
 import Theme from "../Theme"
 import Typist from 'react-typist'
-import MacButtons from "../Header/MacButtons"
+import MacButtons from "../Shared/MacButtons"
 
 const GUI = (props: any) => {
   const { children, name } = props

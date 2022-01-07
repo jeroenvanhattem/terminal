@@ -3,20 +3,20 @@ import {
   Input,
   Text
 } from "@chakra-ui/react"
-import Header from "../Header/Header"
-import Theme from "../Theme"
 import Typist from 'react-typist'
-import MacButtons from "../Header/MacButtons"
 import { useEffect, useRef, useState } from "react"
+import Blink from '../Utils/Blink'
+import Theme from "../Theme"
 import Terminal from "../Interface/Terminal"
 
 const Boot = (props: any) => {
   const { setBooted } = props
   const [advance, setAdvance] = useState(false)
+  const [showInput, setShowInput] = useState(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
   const update = () => {
-    if (inputRef?.current?.value === 'exec exploit') {
+    if (inputRef?.current?.value.trim() === 'exec exploit') {
       setAdvance(true)
     }
   }
@@ -28,6 +28,13 @@ const Boot = (props: any) => {
       }, 12000)
     }
   }, [advance, setBooted])
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowInput(true)
+      inputRef?.current?.focus()
+    }, 14000)
+  }, [setShowInput])
 
   return (
     <Terminal setBooted={setBooted}>
@@ -41,8 +48,9 @@ const Boot = (props: any) => {
           <Typist.Delay ms={300} />
           root ~ run `exec exploit` to run the exploit and enter the system <br />
         </Typist>
-        <Flex flexDir='row'>
+        <Flex flexDir='row' display={showInput ? 'unset' : 'none'}>
           root ~&nbsp;
+          {/* <Blink height={12} /> */}
           <Input
             ref={inputRef}
             onChange={update}
@@ -53,6 +61,10 @@ const Boot = (props: any) => {
             autoFocus
             border='none'
             defaultValue=''
+            _focus={{
+              border: 'none'
+            }
+            }
           />
         </Flex>
       </Flex >

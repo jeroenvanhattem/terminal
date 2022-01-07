@@ -3,10 +3,9 @@ import {
   Input,
   Text
 } from "@chakra-ui/react"
-import Header from "../Header/Header"
 import Theme from "../Theme"
 import Typist from 'react-typist'
-import MacButtons from "../Header/MacButtons"
+import MacButtons from "../Shared/MacButtons"
 import { useEffect, useRef, useState } from "react"
 
 const Terminal = (props: any) => {
@@ -31,7 +30,7 @@ const Terminal = (props: any) => {
       align='center'
       fontFamily={'Roboto Mono'}
     >
-      <Flex pos='absolute' top={4} right={4} cursor='pointer' onClick={() => setBooted(true)}>Click here to skip the booting sequence</Flex>
+      <Flex pos='absolute' top={4} right={{ base: 'unset', md: 4 }} cursor='pointer' onClick={() => setBooted(true)}>Click here to skip the booting sequence</Flex>
       <Flex
         w={size.width}
         h={size.height}
