@@ -20,7 +20,7 @@ const Welcome = (props: any) => {
         >
           <Heading>Welcome</Heading>
           <Text>
-            Make yourself at home
+            Make yourself at home. Fun fact, I made this website in 1 evening.
           </Text>
         </Flex>
       </File>
