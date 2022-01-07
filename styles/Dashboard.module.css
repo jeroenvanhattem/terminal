@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500&display=swap");
+
+.dashboard {
+  width: 90%;
+  height: 100%;
+  background-image: linear-gradient(#f9f9fc, #f5f5fd);
+  overflow-y: scroll;
+}
+
+.grid {
+  width: 100%;
+  height: 100%;
+}
+
+.card {
+  height: calc(100vh - 80px);
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+}
+
+.card .header {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.card h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+}
+
+.weatherInfo {
+  font-size: 24px;
+}
