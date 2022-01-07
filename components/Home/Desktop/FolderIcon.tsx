@@ -14,6 +14,7 @@ const FolderIcon = (props: any) => {
     <Flex
       w={48}
       h={56}
+      my={4}
       align='center'
       flexDir='column'
       onClick={() => setActive(name)}

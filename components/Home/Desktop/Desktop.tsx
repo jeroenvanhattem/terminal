@@ -15,7 +15,8 @@ const Desktop = (props: any) => {
       bgColor={Theme()._800}
       w='100%'
       h='100%'
-      p={16}
+      minH={{base: '100vh', lg: '100%'}}
+      p={{ base: 4, lg: 16 }}
       flexDir={'column'}
     >
       <Flex>
@@ -26,9 +27,9 @@ const Desktop = (props: any) => {
           <FolderIcon name='experience' setActive={setActive} />
         </Wrap>
       </Flex>
-      
+
       <Flex flexGrow={1} />
-      
+
       <Flex>
         <Wrap>
           <Link name='github' url='https://github.com/jeroenvanhattem' setActive={setActive} />

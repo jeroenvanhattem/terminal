@@ -13,17 +13,18 @@ const Music = (props: any) => {
         <Flex
           flexDir='column'
           align='center'
+          minH='100%'
         >
           <Heading>Music</Heading>
           <Flex
             w='80%'
             h='100%'
             p={4}
-            flexDir='row'
+            flexDir={{ base: 'column', lg: 'row' }}
           >
             <Flex
-              w='50%'
-              h='100%'
+              w={{ base: '90%', lg: '50%' }}
+              h={{ base: 'unset', lg: '100%' }}
               flexDir='column'
               mx={2}
             >
@@ -43,9 +44,10 @@ const Music = (props: any) => {
               </Text>
             </Flex>
             <Flex
-              w='50%'
-              h='100%'
-              mx={2}
+              w={{ base: '90%', lg: '50%' }}
+              h={{ base: 'auto', lg: '100%' }}
+              mx={{ base: 'unset', lg: 2 }}
+              my={{ base: 4, lg: 'unset' }}
             >
               <iframe src="https://open.spotify.com/embed/artist/7Egoy0UuRKksBWzmGYzd68?utm_source=generator" width="100%" height="380" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
             </Flex>

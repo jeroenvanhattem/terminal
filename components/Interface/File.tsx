@@ -28,8 +28,10 @@ const File = (props: any) => {
 
   return (
     <Flex
-      w={size.width}
-      h={size.height}
+      w={{base: '100%', lg: size.width}}
+      h={{base: 'auto', lg: size.height}}
+      minW={{ base: '100%', lg: '700px' }}
+      minH={{ base: '400px', lg: '600px' }}
       pos='absolute'
       justify='center'
       align='center'
@@ -37,9 +39,9 @@ const File = (props: any) => {
     >
       <Flex
         w={{ base: '100%', lg: size.width }}
-        h={{ base: '100%', lg: size.height }}
+        h={{ base: 'auto', lg: size.height }}
         minW={{ base: '100%', lg: '700px' }}
-        minH={{ base: '100%', lg: '600px' }}
+        minH={{ base: '400px', lg: '600px' }}
         border='1px solid'
         borderColor={Theme()._700}
         borderRadius={15}

@@ -28,12 +28,13 @@ const GUI = (props: any) => {
     <Flex
       w='100vw'
       maxW='100vw'
-      h='100vh'
-      maxH='100vh'
+      h={{ base: '100%', lg: '100vh' }}
+      minH={{ base: '100%', lg: '100vh' }}
       justify='center'
       align='center'
       pos='relative'
       fontFamily={'Open Sans'}
+      overflowY='scroll'
     >
       <Flex
         w={{ base: '100%', lg: size.width }}

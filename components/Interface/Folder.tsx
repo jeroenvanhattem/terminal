@@ -28,8 +28,8 @@ const File = (props: any) => {
 
   return (
     <Flex
-      w={size.width}
-      h={size.height}
+      w={{ base: '100%', lg: size.width }}
+      h={{ base: '100%', lg: size.height }}
       pos='absolute'
       justify='center'
       align='center'
