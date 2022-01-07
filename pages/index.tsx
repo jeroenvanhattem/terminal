@@ -13,7 +13,7 @@ import Theme from '../components/Theme';
 
 const IndexPage = () => {
   const router = useRouter()
-  const [isLoading, setIsLoading] = useState(true)
+  const [booted, setBooted] = useState(false)
   return (
     <Flex
       bgColor={Theme()._900}
@@ -24,9 +24,9 @@ const IndexPage = () => {
         title={'Home | Jeroen van Hattem'}
         description="Fullstack Javascript developer."
       />
-      {isLoading
-        ? <Boot />
-        : <Home />
+      {booted
+        ? <Home />
+        : <Boot setBooted={setBooted}/>
       }
     </Flex>
   )

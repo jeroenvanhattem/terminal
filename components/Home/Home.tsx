@@ -10,7 +10,7 @@ const Home = () => {
       bgColor={Theme()._900}
       flexDir='column'
     >
-      <Header />
+      Welcome to the mainframe.
     </Flex>
   )
 }

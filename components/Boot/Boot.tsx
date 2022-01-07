@@ -1,10 +1,33 @@
-import { Flex } from "@chakra-ui/react"
+import {
+  Flex,
+  Input,
+  Text
+} from "@chakra-ui/react"
 import Header from "../Header/Header"
 import Theme from "../Theme"
 import Typist from 'react-typist'
 import MacButtons from "../Header/MacButtons"
+import { useEffect, useRef, useState } from "react"
 
-const Boot = () => {
+const Boot = (props: any) => {
+  const { setBooted } = props
+  const [advance, setAdvance] = useState(false)
+  const inputRef = useRef<HTMLInputElement>(null)
+
+  const update = () => {
+    if (inputRef?.current?.value === 'exec exploit') {
+      setAdvance(true)
+    }
+  }
+
+  useEffect(() => {
+    if (advance) {
+      setTimeout(() => {
+        setBooted(true)
+      }, 12000)
+    }
+  }, [advance])
+
   return (
     <Flex
       w='100vw'
@@ -29,25 +52,46 @@ const Boot = () => {
         </Flex>
         <Flex ml={4} flexDir='column'>
           <Typist>
-            root ~ Booting system &nbsp;
+            root ~ booting system <br />
             <Typist.Delay ms={1500} />
-            .
-            <Typist.Delay ms={1500} />
-            .
-            <Typist.Delay ms={1500} />
-            . <br />
-            <Typist.Delay ms={1500} />
-            root ~ Mainframe loaded <br />
+            root ~ mainframe loaded <br />
             <Typist.Delay ms={300} />
-            root ~ Breaching security <br />
+            root ~ found vulnerability <br />
             <Typist.Delay ms={300} />
-            root ~ Patching <br />
-            <Typist.Delay ms={300} />
-            root ~ All systems ready <br /><br /><br />
-            <Typist.Delay ms={300} />
-            root ~ Press any key to enter system. <br />
+            root ~ run `exec exploit` to run the exploit and enter the system <br />
           </Typist>
+          <Flex flexDir='row'>
+            root ~&nbsp;
+            <Input
+              ref={inputRef}
+              onChange={update}
+              h={6}
+              w={64}
+              m={0}
+              p={0}
+              autoFocus
+              border='none'
+              defaultValue=''
+            />
+          </Flex>
         </Flex >
+
+        {advance &&
+          <Flex ml={4} flexDir='column'>
+            <Typist>
+              root ~ running exploit &nbsp;
+              <Typist.Delay ms={1000} />
+              .
+              <Typist.Delay ms={1000} />
+              .
+              <Typist.Delay ms={1000} />
+              . <br />
+              <Typist.Delay ms={300} />
+              <Text color={Theme().success}>root ~ all systems ready <br /><br /><br /></Text>
+              <Typist.Delay ms={300} />
+              root ~ patching you into mainframe <br />
+            </Typist>
+          </Flex >}
       </Flex >
     </Flex >
   )
