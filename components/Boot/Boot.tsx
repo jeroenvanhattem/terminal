@@ -18,8 +18,22 @@ const Boot = (props: any) => {
   const update = () => {
     if (inputRef?.current?.value.trim() === 'exec exploit') {
       setAdvance(true)
+      inputRef?.current?.blur()
     }
   }
+
+  const onFocus = () => {
+    if (showInput) {
+      inputRef?.current?.focus()
+    }
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShowInput(true)
+      inputRef?.current?.focus()
+    }, 14000)
+  }, [setShowInput])
 
   useEffect(() => {
     if (advance) {
@@ -29,15 +43,8 @@ const Boot = (props: any) => {
     }
   }, [advance, setBooted])
 
-  useEffect(() => {
-    setTimeout(() => {
-      setShowInput(true)
-      inputRef?.current?.focus()
-    }, 14000)
-  }, [setShowInput])
-
   return (
-    <Terminal setBooted={setBooted}>
+    <Terminal setBooted={setBooted} onClick={onFocus}>
       <Flex ml={4} flexDir='column'>
         <Typist>
           root ~ booting system <br />
@@ -55,7 +62,7 @@ const Boot = (props: any) => {
             ref={inputRef}
             onChange={update}
             h={6}
-            w={64}
+            w='90%'
             m={0}
             p={0}
             autoFocus

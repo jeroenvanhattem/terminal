@@ -9,7 +9,7 @@ import MacButtons from "../Shared/MacButtons"
 import { useEffect, useRef, useState } from "react"
 
 const Terminal = (props: any) => {
-  const { children, setBooted } = props
+  const { children, setBooted, onClick } = props
   const [size, setSize] = useState({ width: '800px', height: '500px' })
 
   const makeBigger = () => {
@@ -39,6 +39,7 @@ const Terminal = (props: any) => {
         borderRadius={15}
         bgColor={Theme()._900}
         flexDir='column'
+        onClick={onClick ? onClick : null}
       >
         <Flex p={2} h={10}>
           <MacButtons onGreen={makeBigger} onOrange={makeSmaller} />
