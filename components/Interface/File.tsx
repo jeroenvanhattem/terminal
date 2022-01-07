@@ -23,10 +23,8 @@ const File = (props: any) => {
 
   return (
     <Flex
-      // w={size.width}
-      // h={size.height}
-      w='800px'
-      h='500px'
+      w={size.width}
+      h={size.height}
       pos='absolute'
       justify='center'
       align='center'

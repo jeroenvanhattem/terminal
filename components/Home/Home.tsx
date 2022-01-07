@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <GUI name={active}>
       <Desktop setActive={setActive} />
-      {active === 'welcome.tsx' && <Welcome setActive={setActive}/>}
+      {active === 'welcome.tsx' && <Welcome setActive={setActive} />}
     </GUI>
   )
 }

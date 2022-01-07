@@ -4,9 +4,12 @@ import File from "../../Interface/File"
 const Welcome = (props: any) => {
   const { setActive } = props
   return (
-    <Flex pos='absolute'>
+    <Flex
+      w='100%'
+      h='100%'
+      pos='absolute'
+    >
       <File setActive={setActive} name='welcome.tsx'>
-
       </File>
     </Flex>
   )

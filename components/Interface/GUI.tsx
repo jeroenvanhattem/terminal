@@ -45,14 +45,16 @@ const GUI = (props: any) => {
         flexDir='column'
       >
         <Flex m={2} align='center'>
-          <Flex w={16} ml={4}>
-            <Code size={18} />
+          <Flex w={28} flexDir='row'>
+            <Flex>
+              <MacButtons onGreen={makeBigger} onOrange={makeSmaller} />
+            </Flex>
           </Flex>
           <Flex flexGrow={1} justify='center'>
             <Text fontSize={18} fontWeight={500}>{name}</Text>
           </Flex>
-          <Flex w={16} ml={4}>
-
+          <Flex w={28} mr={4} justify='flex-end'>
+            <Code size={18} />
           </Flex>
         </Flex>
         <Flex
