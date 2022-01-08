@@ -14,8 +14,6 @@ const Icon = (props: any) => {
       my={4}
       align='center'
       flexDir='column'
-      onClick={() => setActive(name)}
-      cursor='pointer'
     >
       <Flex
         w={'80%'}
@@ -26,6 +24,8 @@ const Icon = (props: any) => {
         borderRadius={15}
         align='center'
         justify='center'
+        onClick={() => setActive(name)}
+        cursor='pointer'
       >
         <Heading>.{name.split('.')[1].toUpperCase()}</Heading>
       </Flex>

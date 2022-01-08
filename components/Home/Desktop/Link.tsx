@@ -32,8 +32,6 @@ const Link = (props: any) => {
         my={4}
         align='center'
         flexDir='column'
-        onClick={() => setActive(name)}
-        cursor='pointer'
       >
         <Flex
           w={'80%'}
@@ -44,6 +42,8 @@ const Link = (props: any) => {
           borderColor={Theme()._700}
           align='center'
           justify='center'
+          onClick={() => setActive(name)}
+          cursor='pointer'
         >
           <Heading>{getIcon()}</Heading>
         </Flex>

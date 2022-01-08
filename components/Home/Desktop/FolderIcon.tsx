@@ -17,8 +17,6 @@ const FolderIcon = (props: any) => {
       my={4}
       align='center'
       flexDir='column'
-      onClick={() => setActive(name)}
-      cursor='pointer'
     >
       <Flex
         w={'80%'}
@@ -29,6 +27,8 @@ const FolderIcon = (props: any) => {
         borderColor={Theme()._700}
         align='center'
         justify='center'
+        onClick={() => setActive(name)}
+        cursor='pointer'
       >
         <Folder size={48} />
       </Flex>
