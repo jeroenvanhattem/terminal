@@ -37,10 +37,10 @@ const GUI = (props: any) => {
       overflowY='scroll'
     >
       <Flex
-        w={{ base: '100%', lg: size.width }}
-        h={{ base: '100%', lg: size.height }}
-        minW={{ base: '100%', lg: '1200px' }}
-        minH={{ base: '100%', lg: '800px' }}
+        w={{ base: '100%', xl: size.width }}
+        h={{ base: '100%', xl: size.height }}
+        minW={{ base: '100%', xl: '1200px' }}
+        minH={{ base: '100%', xl: '800px' }}
         border='1px solid'
         borderColor={Theme()._700}
         borderRadius={15}

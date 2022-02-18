@@ -47,8 +47,10 @@ const File = (props: any) => {
         borderRadius={15}
         bgColor={Theme()._900}
         flexDir='column'
+        overflowY='scroll'
+        pos='relative'
       >
-        <Flex m={2}>
+        <Flex p={2} pos='sticky' top={0} bgColor={Theme()._900}>
           <Flex w={24}>
             <MacButtons onRed={() => setActive('')} onGreen={makeBigger} onOrange={makeSmaller} />
           </Flex>
